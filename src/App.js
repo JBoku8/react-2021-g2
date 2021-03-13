@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Welcome from "./Welcome";
+import "./App.css";
 
 function App() {
+  // const message = <h1>Message Text</h1>;
+  // const label = <label htmlFor="">Label Example</label>;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Welcome message="ReactJs" />
+      <Welcome message="Webpack" />
+      <Welcome message="BabelJs" />
+      <Welcome message="NodeJs" />
+      <Welcome message="npm && yarn" />
     </div>
   );
 }
