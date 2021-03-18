@@ -1,17 +1,11 @@
-import Welcome from "./Welcome";
+import Welcome from "./components/welcome";
+
 import "./App.css";
 
 function App() {
-  // const message = <h1>Message Text</h1>;
-  // const label = <label htmlFor="">Label Example</label>;
-
   return (
-    <div className="App">
+    <div className="container">
       <Welcome message="ReactJs" />
-      <Welcome message="Webpack" />
-      <Welcome message="BabelJs" />
-      <Welcome message="NodeJs" />
-      <Welcome message="npm && yarn" />
     </div>
   );
 }
