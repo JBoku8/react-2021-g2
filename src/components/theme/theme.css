@@ -1,0 +1,36 @@
+.homePage {
+  background-color: #ed4c67;
+}
+.todoHome {
+  background-color: #1289a7;
+}
+.counter {
+  background-color: #f79f1f;
+}
+
+.homePage h1,
+.homePage h2,
+.homePage h3,
+.homePage h4,
+.homePage h5,
+.homePage h6 {
+  color: white !important;
+}
+
+.todoHome h1,
+.todoHome h2,
+.todoHome h3,
+.todoHome h4,
+.todoHome h5,
+.todoHome h6 {
+  color: white !important;
+}
+
+.counter h1,
+.counter h2,
+.counter h3,
+.counter h4,
+.counter h5,
+.counter h6 {
+  color: white !important;
+}

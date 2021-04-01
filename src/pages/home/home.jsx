@@ -9,15 +9,15 @@ function HomePage(props) {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    console.log("ერთჯერადი");
+    // console.log("ერთჯერადი");
   }, []);
 
   useEffect(() => {
-    console.log("ყოველთვის");
+    // console.log("ყოველთვის");
   });
 
   useEffect(() => {
-    console.info("მნიშვნელობის შეცვლილსას");
+    // console.info("მნიშვნელობის შეცვლილსას");
     setMessage(value);
   }, [value]);
 
