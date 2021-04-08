@@ -1,20 +1,20 @@
-import { useState } from "react";
-import HomePage from "./pages/home";
-import Counter from "./pages/counter";
-import TodoHome from "./pages/todo/todo-home";
+import { useState } from 'react';
+import HomePage from './pages/home';
+import Counter from './pages/counter';
+import TodoHome from './pages/todo/todo-home';
 
-import Navigation from "./components/navigation";
-import Theme from "./components/theme";
+import Navigation from './components/navigation';
+import Theme from './components/theme';
 
-import "./App.css";
+import './App.css';
 
 function App() {
   const [page, setPage] = useState({
-    homePage: true,
-    todoHome: false,
+    homePage: false,
+    todoHome: true,
     counter: false,
   });
-  const [activePage, setActivePage] = useState("homePage");
+  const [activePage, setActivePage] = useState('todoHome');
 
   const onPageChange = (pageKey) => {
     const updatePages = { ...page };

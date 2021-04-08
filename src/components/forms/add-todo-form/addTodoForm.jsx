@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useState, useContext } from 'react';
 
-function AddTodoForm({ onAddTodo }) {
-  const [title, setTitle] = useState("");
+import { TodoProvider } from '../../../providers/TodoProvider';
+
+function AddTodoForm(props) {
+  const { onAddTodo } = useContext(TodoProvider);
+
+  const [title, setTitle] = useState('');
   const [completed, setCompleted] = useState(false);
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log("FORM SUBMIT");
+    console.log('FORM SUBMIT');
     onAddTodo({
       title,
       completed,
       id: Math.random().toString(),
     });
-    setTitle("");
+    setTitle('');
     setCompleted(false);
   };
 
