@@ -1,0 +1,13 @@
+.homePage {
+  background-color: #ed4c67;
+}
+.todoHome {
+  background-color: #1289a7;
+}
+.counter {
+  background-color: #f79f1f;
+}
+
+.todoHome .title {
+  color: #ed4c67 !important;
+}
