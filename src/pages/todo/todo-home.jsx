@@ -2,11 +2,13 @@ import AddTodoForm from '../../components/forms/add-todo-form';
 import TodoList from '../../components/list/todo-list';
 import TodoProviderComponent from '../../providers/TodoProvider';
 
+import css from './todo.module.css';
+
 function TodoHome(props) {
   return (
     <TodoProviderComponent>
       <div className="row">
-        <h1>Todo</h1>
+        <h1 className={css.title}>Todo</h1>
         <div className="col-6">
           <AddTodoForm />
         </div>

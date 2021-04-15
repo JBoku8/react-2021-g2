@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { Route, Switch } from 'react-router';
+
 import HomePage from './pages/home';
 import Counter from './pages/counter';
 import TodoHome from './pages/todo/todo-home';
+import Profile from './pages/profile';
 
 import Navigation from './components/navigation';
 import Theme from './components/theme';
@@ -9,37 +11,28 @@ import Theme from './components/theme';
 import './App.css';
 
 function App() {
-  const [page, setPage] = useState({
-    homePage: false,
-    todoHome: true,
-    counter: false,
-  });
-  const [activePage, setActivePage] = useState('todoHome');
-
-  const onPageChange = (pageKey) => {
-    const updatePages = { ...page };
-    let newActivePage = activePage;
-    Object.keys(page).forEach((key) => {
-      if (key === pageKey) {
-        updatePages[pageKey] = true;
-        newActivePage = pageKey;
-      } else {
-        updatePages[key] = false;
-      }
-    });
-
-    setActivePage(newActivePage);
-    setPage(updatePages);
-  };
-
   return (
     <div className="container">
-      <Navigation onPageChange={onPageChange} pages={page} />
+      <Navigation />
       <hr />
-      <Theme type={activePage}>
-        {page.homePage && <HomePage />}
-        {page.todoHome && <TodoHome />}
-        {page.counter && <Counter />}
+      <Theme>
+        <Switch>
+          <Route path="/todos">
+            <TodoHome />
+          </Route>
+
+          <Route path="/counter">
+            <Counter />
+          </Route>
+
+          <Route path="/profile">
+            <Profile title="Auth Protected profile page" />
+          </Route>
+
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
       </Theme>
     </div>
   );
