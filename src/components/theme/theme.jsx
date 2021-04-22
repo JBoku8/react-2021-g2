@@ -3,22 +3,22 @@ import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import css from './theme.module.css';
+// import css from './theme.module.css';
 
 function Theme({ children }) {
   const { pathname } = useLocation();
-  const [themeColor, setThemeColor] = useState();
+  const [themeColor, setThemeColor] = useState('bg-light');
 
   useEffect(() => {
     switch (pathname) {
       case '/todos':
-        setThemeColor(css.todoHome);
+        // setThemeColor(css.todoHome);
         break;
       case '/counter':
-        setThemeColor(css.counter);
+        // setThemeColor(css.counter);
         break;
       default:
-        setThemeColor(css.homePage);
+        setThemeColor('bg-light');
     }
   }, [pathname]);
 

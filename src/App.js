@@ -4,6 +4,7 @@ import HomePage from './pages/home';
 import Counter from './pages/counter';
 import TodoHome from './pages/todo/todo-home';
 import Profile from './pages/profile';
+import AuthPage from './pages/auth';
 
 import Navigation from './components/navigation';
 import Theme from './components/theme';
@@ -27,6 +28,10 @@ function App() {
 
           <Route path="/profile">
             <Profile title="Auth Protected profile page" />
+          </Route>
+
+          <Route path="/auth">
+            <AuthPage />
           </Route>
 
           <Route path="/">
