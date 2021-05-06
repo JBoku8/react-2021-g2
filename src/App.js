@@ -1,15 +1,19 @@
+import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router';
 
 import HomePage from './pages/home';
-import Counter from './pages/counter';
-import TodoHome from './pages/todo/todo-home';
-import Profile from './pages/profile';
-import AuthPage from './pages/auth';
 
 import Navigation from './components/navigation';
 import Theme from './components/theme';
+import { Loader } from './components/loader';
 
 import './App.css';
+
+const AuthPage = React.lazy(() => import('./pages/auth'));
+const Profile = React.lazy(() => import('./pages/profile'));
+const TodoHome = React.lazy(() => import('./pages/todo/todo-home'));
+const Counter = React.lazy(() => import('./pages/counter'));
+const FakerBooks = React.lazy(() => import('./pages/faker-books'));
 
 function App() {
   return (
@@ -17,27 +21,33 @@ function App() {
       <Navigation />
       <hr />
       <Theme>
-        <Switch>
-          <Route path="/todos">
-            <TodoHome />
-          </Route>
+        <Suspense fallback={<Loader message="Page is Loading..." />}>
+          <Switch>
+            <Route path="/todos">
+              <TodoHome />
+            </Route>
 
-          <Route path="/counter">
-            <Counter />
-          </Route>
+            <Route path="/counter">
+              <Counter />
+            </Route>
 
-          <Route path="/profile">
-            <Profile title="Auth Protected profile page" />
-          </Route>
+            <Route path="/profile">
+              <Profile title="Auth Protected profile page" />
+            </Route>
 
-          <Route path="/auth">
-            <AuthPage />
-          </Route>
+            <Route path="/auth">
+              <AuthPage />
+            </Route>
 
-          <Route path="/">
-            <HomePage />
-          </Route>
-        </Switch>
+            <Route path="/faker-books">
+              <FakerBooks />
+            </Route>
+
+            <Route path="/">
+              <HomePage />
+            </Route>
+          </Switch>
+        </Suspense>
       </Theme>
     </div>
   );
