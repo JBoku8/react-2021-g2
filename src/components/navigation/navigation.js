@@ -30,6 +30,12 @@ const Navigation = (props) => {
           </li>
 
           <li className="nav-item">
+            <NavLink to="/faker-books" className="nav-link">
+              Faker Books
+            </NavLink>
+          </li>
+
+          <li className="nav-item">
             <NavLink to="/auth" className="nav-link">
               Auth
             </NavLink>
