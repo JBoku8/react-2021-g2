@@ -4,7 +4,7 @@ import TodoProviderComponent from '../../providers/TodoProvider';
 
 import css from './todo.module.css';
 
-function TodoHome(props) {
+function TodoHome() {
   return (
     <TodoProviderComponent>
       <div className="row">

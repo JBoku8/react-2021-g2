@@ -1,15 +1,19 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
-import { withAuthProtected } from '../../hoc/withAuthProtected';
+import { withAuthProtected } from '../../hoc';
+import { setAuthGuestAction } from '../../redux/actions/auth-actions';
 
 import css from './profile.module.css';
 
 function Profile(props) {
+  const dispatch = useDispatch();
   const history = useHistory();
 
   const onLogOut = () => {
     localStorage.removeItem('auth.token');
+    dispatch(setAuthGuestAction());
     history.replace('/');
   };
 
