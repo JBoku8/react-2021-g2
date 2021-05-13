@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 // ერთჯერადი მოქმედებნა - function() ერთხელ
 // ყოველთვის კომპონენტის გადახატვის დრის = function()
 // ცვლადზე დამოკიდებული function()
 
-function HomePage(props) {
-  const [value, setValue] = useState("");
-  const [message, setMessage] = useState("");
+function HomePage() {
+  const [value, setValue] = useState('');
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     // console.log("ერთჯერადი");
@@ -25,14 +25,12 @@ function HomePage(props) {
     <div className="row">
       <button
         className="btn btn-primary"
-        onClick={() => setValue(Math.random().toString())}
-      >
+        onClick={() => setValue(Math.random().toString())}>
         Change Value
       </button>
       <button
         className="btn btn-info mt-2"
-        onClick={() => setMessage(Math.random().toString())}
-      >
+        onClick={() => setMessage(Math.random().toString())}>
         Change Message
       </button>
       <h2>Home Page</h2>

@@ -8,6 +8,7 @@ import Theme from './components/theme';
 import { Loader } from './components/loader';
 
 import './App.css';
+import ReduxCounter from './pages/redux-counter';
 
 const AuthPage = React.lazy(() => import('./pages/auth'));
 const Profile = React.lazy(() => import('./pages/profile'));
@@ -41,6 +42,10 @@ function App() {
 
             <Route path="/faker-books">
               <FakerBooks />
+            </Route>
+
+            <Route path="/redux-counter">
+              <ReduxCounter />
             </Route>
 
             <Route path="/">

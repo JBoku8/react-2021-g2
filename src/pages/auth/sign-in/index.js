@@ -1,6 +1,6 @@
 import SignInForm from '../../../components/forms/sign-in-form';
 
-function SignInPage(props) {
+function SignInPage() {
   return (
     <div className="row">
       <h2>SignInPage</h2>
