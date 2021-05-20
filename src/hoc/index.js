@@ -1,2 +1,2 @@
-export * from './withAuthProtected';
-export * from './withNoAuth';
+export * from './withAuthProtected/withAuthProtected';
+export * from './withNoAuth/withNoAuth';

@@ -1,6 +1,6 @@
 import SignUpForm from '../../../components/forms/sign-up-form';
 
-function SignUpPage(props) {
+function SignUpPage() {
   return (
     <div className="row">
       <h2>SignInPage</h2>

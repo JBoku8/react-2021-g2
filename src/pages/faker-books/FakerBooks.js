@@ -99,8 +99,7 @@ function FakerBooks() {
             <div
               className="card p-1 mx-1 mb-2"
               key={item.isbn}
-              style={{ maxWidth: '18rem' }}
-            >
+              style={{ maxWidth: '18rem' }}>
               <h2 className="card-title text-center">{item.title}</h2>
               <img
                 src={item.image}

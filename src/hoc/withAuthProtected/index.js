@@ -1,1 +1,1 @@
-export { withAuthProtected } from './withAuthProtected';
+export { default } from './withAuthProtected';

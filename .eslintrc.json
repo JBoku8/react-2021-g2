@@ -43,6 +43,16 @@
     "implicit-arrow-linebreak": "off",
     "arrow-body-style": "off",
     "arrow-parens": "off",
-    "arrow-spacing": "off"
+    "no-console": "off",
+    "arrow-spacing": "off",
+    "react/jsx-closing-bracket-location": [1, { "selfClosing": "after-props" }],
+    "react/prop-types": "off",
+    "react/jsx-one-expression-per-line": [
+      1,
+      {
+        "allow": "single-child"
+      }
+    ],
+    "react/state-in-constructor": "off"
   }
 }

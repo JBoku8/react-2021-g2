@@ -1,1 +1,1 @@
-export { withNoAuth } from './withNoAuth';
+export { default } from './withNoAuth';
