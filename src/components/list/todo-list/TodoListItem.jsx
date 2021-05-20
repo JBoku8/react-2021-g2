@@ -18,8 +18,7 @@ function TodoListItem({ todo }) {
       className={`list-group-item list-group-item-action ${
         todo.completed ? 'list-group-item-primary' : ''
       }`}
-      onClick={() => onTodoUpdate(todo)}
-    >
+      onClick={() => onTodoUpdate(todo)}>
       {todo.title}
     </div>
   );

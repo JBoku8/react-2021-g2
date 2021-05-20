@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 
 import { TodoProvider } from '../../../providers/TodoProvider';
 
-function AddTodoForm(props) {
+function AddTodoForm() {
   const { onAddTodo } = useContext(TodoProvider);
 
   const [title, setTitle] = useState('');
@@ -23,9 +23,7 @@ function AddTodoForm(props) {
     <form onSubmit={onSubmit}>
       <div className="mb-3">
         <label htmlFor="todoTitle" className="form-label">
-          Todo Title -
-          {' '}
-          {title}
+          Todo Title - {title}
         </label>
         <input
           type="text"
@@ -35,7 +33,8 @@ function AddTodoForm(props) {
           value={title}
           onChange={({ target }) => {
             setTitle(target.value);
-          }} />
+          }}
+        />
       </div>
 
       <div className="mb-3 form-check">
@@ -47,7 +46,8 @@ function AddTodoForm(props) {
           defaultChecked={completed}
           onClick={({ target }) => {
             setCompleted(target.checked);
-          }} />
+          }}
+        />
         <label className="form-check-label" htmlFor="completed">
           Completed
         </label>
