@@ -23,7 +23,9 @@ function AddTodoForm() {
     <form onSubmit={onSubmit}>
       <div className="mb-3">
         <label htmlFor="todoTitle" className="form-label">
-          Todo Title - {title}
+          Todo Title -
+          {' '}
+          {title}
         </label>
         <input
           type="text"

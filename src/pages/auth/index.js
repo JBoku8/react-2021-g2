@@ -16,7 +16,8 @@ function AuthPage() {
               className={classNames('nav-link', {
                 active: location.pathname.includes('/sign-in'),
               })}
-              to="/auth/sign-in">
+              to="/auth/sign-in"
+            >
               Sign In
             </Link>
           </li>
@@ -25,7 +26,8 @@ function AuthPage() {
               className={classNames('nav-link', {
                 active: location.pathname.includes('/sign-up'),
               })}
-              to="/auth/sign-up">
+              to="/auth/sign-up"
+            >
               Sign Up
             </Link>
           </li>

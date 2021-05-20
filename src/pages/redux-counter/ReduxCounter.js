@@ -1,10 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  addNumberAction,
+import { addNumberAction,
   resetNumberAction,
-  subtractNumberAction,
-} from '../../redux/actions/common-actions';
+  subtractNumberAction } from '../../redux/actions/common-actions';
 import { counterSelector, messageSelector } from '../../redux/selectors';
 
 function ReduxCounter() {

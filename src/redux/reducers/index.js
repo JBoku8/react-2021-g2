@@ -1,3 +1,4 @@
 export { appReducer } from './appReducer';
 
-export default {};
+export default {
+};

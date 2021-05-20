@@ -1,7 +1,9 @@
 import React from 'react';
 
 class ErrorBoundary extends React.Component {
-  state = { error: null, errorInfo: null };
+  state = {
+    error: null, errorInfo: null,
+  };
 
   componentDidCatch(error, errorInfo) {
     this.setState({
@@ -20,7 +22,10 @@ class ErrorBoundary extends React.Component {
         <div className="container">
           <h2 className="text-danger">Something went wrong.</h2>
           <a href="/">Home Page</a>
-          <details style={{ whiteSpace: 'pre-wrap' }}>
+          <details style={{
+            whiteSpace: 'pre-wrap',
+          }}
+          >
             {error && error.toString()}
             <br />
             {errorInfo.componentStack}
