@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 class Counter extends React.Component {
   state = {
-    title: "Loading...",
+    title: 'Loading...',
     count: 0,
   };
 
@@ -12,7 +12,7 @@ class Counter extends React.Component {
     this.timerId = setTimeout(() => {
       this.setState({
         ...this.state,
-        title: "Counter Page",
+        title: 'Counter Page',
       });
     }, 2000);
     // document.body.style.backgroundColor = "#1B9CFC";
@@ -53,7 +53,10 @@ class Counter extends React.Component {
     return (
       <div className="row">
         <h2 className="text-muted">
-          {title} - {count}
+          {title}
+          {' '}
+          -
+          {count}
         </h2>
         <div className="col-2 d-flex justify-content-between">
           <button className="btn btn-info btn-lg" onClick={this.onPlus}>

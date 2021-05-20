@@ -29,7 +29,7 @@ const Navigation = () => {
             </NavLink>
           </li>
 
-          {!!authed ? (
+          {authed ? (
             <li className="nav-item">
               <NavLink to="/profile" className="nav-link">
                 Profile

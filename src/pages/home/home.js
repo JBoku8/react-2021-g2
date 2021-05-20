@@ -25,17 +25,25 @@ function HomePage() {
     <div className="row">
       <button
         className="btn btn-primary"
-        onClick={() => setValue(Math.random().toString())}>
+        onClick={() => setValue(Math.random().toString())}
+      >
         Change Value
       </button>
       <button
         className="btn btn-info mt-2"
-        onClick={() => setMessage(Math.random().toString())}>
+        onClick={() => setMessage(Math.random().toString())}
+      >
         Change Message
       </button>
       <h2>Home Page</h2>
-      <h4>Value - {value}</h4>
-      <h4>Message - {message}</h4>
+      <h4>
+        Value -
+        {value}
+      </h4>
+      <h4>
+        Message -
+        {message}
+      </h4>
     </div>
   );
 }

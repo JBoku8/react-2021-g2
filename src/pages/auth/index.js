@@ -1,5 +1,7 @@
 import classNames from 'classnames';
-import { Redirect, Route, Switch, useLocation } from 'react-router';
+import {
+  Redirect, Route, Switch, useLocation,
+} from 'react-router';
 import { Link } from 'react-router-dom';
 import SignInPage from './sign-in';
 import SignUpPage from './sign-up';
@@ -16,7 +18,8 @@ function AuthPage(props) {
               className={classNames('nav-link', {
                 active: location.pathname.includes('/sign-in'),
               })}
-              to="/auth/sign-in">
+              to="/auth/sign-in"
+            >
               Sign In
             </Link>
           </li>
@@ -25,7 +28,8 @@ function AuthPage(props) {
               className={classNames('nav-link', {
                 active: location.pathname.includes('/sign-up'),
               })}
-              to="/auth/sign-up">
+              to="/auth/sign-up"
+            >
               Sign Up
             </Link>
           </li>

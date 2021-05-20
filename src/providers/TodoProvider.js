@@ -52,7 +52,8 @@ function TodoProviderComponent({ children }) {
         setTodoList,
         onAddTodo,
         onTodoUpdate,
-      }}>
+      }}
+    >
       {children}
     </TodoProvider.Provider>
   );

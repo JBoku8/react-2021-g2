@@ -27,7 +27,8 @@ function Theme({ children }) {
       className={classNames(
         'container-fluid p-5 border theme-container',
         themeColor,
-      )}>
+      )}
+    >
       {children}
     </div>
   );

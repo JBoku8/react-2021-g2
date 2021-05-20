@@ -15,7 +15,10 @@ function ReduxCounter() {
   return (
     <div className="row">
       <div className="col-12 mb-2">
-        <h2 className="text-muted">Redux Counter - {counter}</h2>
+        <h2 className="text-muted">
+          Redux Counter -
+          {counter}
+        </h2>
         <h4 className="text-primary">{message}</h4>
       </div>
       <div className="col-12 d-grid gap-1">
@@ -23,22 +26,37 @@ function ReduxCounter() {
           className="btn btn-primary"
           onClick={() => {
             dispatch(addNumberAction(5));
-          }}>
+          }}
+        >
           Add Number - Action
         </button>
         <button
           className="btn btn-primary"
           onClick={() => {
             dispatch(subtractNumberAction(5));
-          }}>
+          }}
+        >
           Subtract Number - Action
         </button>
         <button
           className="btn btn-primary"
           onClick={() => {
             dispatch(resetNumberAction());
-          }}>
+          }}
+        >
           Reset Number - Action
+        </button>
+
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            dispatch({
+              type: 'BLOCKED_ACTION',
+              payload: 10,
+            });
+          }}
+        >
+          BLOCKED - Action
         </button>
       </div>
     </div>

@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
 class ErrorBoundary extends React.Component {
   state = { error: null, errorInfo: null };
 
   componentDidCatch(error, errorInfo) {
     this.setState({
-      error: error,
-      errorInfo: errorInfo,
+      error,
+      errorInfo,
     });
     // SEND REPORT
   }
@@ -18,7 +18,7 @@ class ErrorBoundary extends React.Component {
         <div className="container">
           <h2 className="text-danger">Something went wrong.</h2>
           <a href="/">Home Page</a>
-          <details style={{ whiteSpace: "pre-wrap" }}>
+          <details style={{ whiteSpace: 'pre-wrap' }}>
             {this.state.error && this.state.error.toString()}
             <br />
             {this.state.errorInfo.componentStack}

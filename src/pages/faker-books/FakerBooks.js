@@ -72,12 +72,10 @@ function FakerBooks() {
         type: SET_FILTER,
         payload: target.value,
       });
-    } else {
-      if (state.filter) {
-        dispatch({
-          type: CLEAR_FILTER,
-        });
-      }
+    } else if (state.filter) {
+      dispatch({
+        type: CLEAR_FILTER,
+      });
     }
   });
 
@@ -101,7 +99,8 @@ function FakerBooks() {
             <div
               className="card p-1 mx-1 mb-2"
               key={item.isbn}
-              style={{ maxWidth: '18rem' }}>
+              style={{ maxWidth: '18rem' }}
+            >
               <h2 className="card-title text-center">{item.title}</h2>
               <img
                 src={item.image}
