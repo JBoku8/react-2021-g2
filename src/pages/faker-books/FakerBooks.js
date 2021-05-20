@@ -25,6 +25,7 @@ const bookReducer = (state, action) => {
         oldBooks: [...action.payload],
       };
     case SET_FILTER:
+      // eslint-disable-next-line no-case-declarations
       const filtered = state.books.filter((item) => {
         return item.title.toLowerCase().includes(action.payload.toLowerCase());
       });
@@ -103,8 +104,7 @@ function FakerBooks() {
               key={item.isbn}
               style={{
                 maxWidth: '18rem',
-              }}
-            >
+              }}>
               <h2 className="card-title text-center">{item.title}</h2>
               <img
                 src={item.image}

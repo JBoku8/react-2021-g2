@@ -45,7 +45,7 @@
     "arrow-parens": "off",
     "no-console": "off",
     "arrow-spacing": "off",
-    "react/jsx-closing-bracket-location": [1, "tag-aligned"],
+    "react/jsx-closing-bracket-location": [0, "tag-aligned"],
     "react/prop-types": "off",
     "react/jsx-one-expression-per-line": [
       0,
@@ -76,6 +76,19 @@
       0,
       {
         "custom": "ignore"
+      }
+    ],
+    "jsx-a11y/no-static-element-interactions": [
+      0,
+      {
+        "handlers": [
+          "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ]
       }
     ]
   }
