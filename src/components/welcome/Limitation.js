@@ -9,8 +9,7 @@ function Limitation({ onClick, message }) {
         onClick={onClick}
         text="Try Again"
         type="default"
-        className="col-4 mt-1"
-      />
+        className="col-4 mt-1" />
     </div>
   );
 }

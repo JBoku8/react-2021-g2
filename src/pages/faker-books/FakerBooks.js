@@ -89,8 +89,7 @@ function FakerBooks() {
           placeholder="search"
           name="search"
           type="search"
-          onKeyUp={onSearch}
-        />
+          onKeyUp={onSearch} />
       </div>
 
       <div className="row border pt-3 pb-4">
@@ -99,13 +98,13 @@ function FakerBooks() {
             <div
               className="card p-1 mx-1 mb-2"
               key={item.isbn}
-              style={{ maxWidth: '18rem' }}>
+              style={{ maxWidth: '18rem' }}
+            >
               <h2 className="card-title text-center">{item.title}</h2>
               <img
                 src={item.image}
                 alt={item.title}
-                className="card-image-top img-fluid w-75 align-self-center"
-              />
+                className="card-image-top img-fluid w-75 align-self-center" />
               <div className="card-body">
                 <p>{item.description}</p>
               </div>

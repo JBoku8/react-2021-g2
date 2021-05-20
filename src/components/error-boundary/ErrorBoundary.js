@@ -12,22 +12,24 @@ class ErrorBoundary extends React.Component {
   }
 
   render() {
-    if (this.state.errorInfo) {
+    const { error, errorInfo } = this.state;
+    const { children } = this.props;
+    if (errorInfo) {
       // Error path
       return (
         <div className="container">
           <h2 className="text-danger">Something went wrong.</h2>
           <a href="/">Home Page</a>
           <details style={{ whiteSpace: 'pre-wrap' }}>
-            {this.state.error && this.state.error.toString()}
+            {error && error.toString()}
             <br />
-            {this.state.errorInfo.componentStack}
+            {errorInfo.componentStack}
           </details>
         </div>
       );
     }
     // Normally, just render children
-    return <div className="container-fluid">{this.props.children}</div>;
+    return <div className="container-fluid">{children}</div>;
   }
 }
 

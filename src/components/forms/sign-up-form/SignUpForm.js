@@ -20,8 +20,7 @@ function SignUpForm(props) {
             type="email"
             className="form-control"
             id="email"
-            {...register('email', { required: true })}
-          />
+            {...register('email', { required: true })} />
           <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
           </div>
@@ -36,8 +35,7 @@ function SignUpForm(props) {
             id="password"
             {...register('password', {
               required: true,
-            })}
-          />
+            })} />
         </div>
 
         <button type="submit" className="btn btn-primary">

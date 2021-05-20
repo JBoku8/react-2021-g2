@@ -14,7 +14,7 @@ const Welcome = ({ message }) => {
   };
   // newValue !== oldValue
   // newObject !== oldObject
-  const onClickHandler = (event) => {
+  const onClickHandler = () => {
     console.log('ADADADAD');
     setValue('state updated');
   };

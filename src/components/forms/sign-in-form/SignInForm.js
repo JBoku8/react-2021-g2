@@ -30,8 +30,7 @@ function SignInForm() {
             className="form-control"
             id="email"
             defaultValue="eve.holt@reqres.in"
-            {...register('email', { required: true })}
-          />
+            {...register('email', { required: true })} />
           <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
           </div>
@@ -47,8 +46,7 @@ function SignInForm() {
             defaultValue="cityslicka"
             {...register('password', {
               required: true,
-            })}
-          />
+            })} />
         </div>
 
         <button type="submit" className="btn btn-primary">

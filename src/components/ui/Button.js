@@ -14,6 +14,7 @@ function Button({
     <button
       className={['btn', 'mx-1', type, className].join(' ')}
       onClick={onClick}
+      type="button"
     >
       {text}
     </button>

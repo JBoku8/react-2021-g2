@@ -35,8 +35,7 @@ function AddTodoForm(props) {
           value={title}
           onChange={({ target }) => {
             setTitle(target.value);
-          }}
-        />
+          }} />
       </div>
 
       <div className="mb-3 form-check">
@@ -48,8 +47,7 @@ function AddTodoForm(props) {
           defaultChecked={completed}
           onClick={({ target }) => {
             setCompleted(target.checked);
-          }}
-        />
+          }} />
         <label className="form-check-label" htmlFor="completed">
           Completed
         </label>
