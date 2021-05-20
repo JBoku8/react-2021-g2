@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 // import css from './theme.module.css';
@@ -27,14 +26,11 @@ function Theme({ children }) {
       className={classNames(
         'container-fluid p-5 border theme-container',
         themeColor,
-      )}>
+      )}
+    >
       {children}
     </div>
   );
 }
-
-Theme.propTypes = {
-  type: PropTypes.oneOf(['homePage', 'todoHome', 'counter']),
-};
 
 export default Theme;

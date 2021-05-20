@@ -1,41 +1,43 @@
-import { useEffect, useState } from 'react';
-
-// ერთჯერადი მოქმედებნა - function() ერთხელ
-// ყოველთვის კომპონენტის გადახატვის დრის = function()
-// ცვლადზე დამოკიდებული function()
+import { useEffect } from 'react';
+import { Loader } from '../../components/loader';
+import useFetch from '../../hooks/useFetch';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 function HomePage() {
-  const [value, setValue] = useState('');
-  const [message, setMessage] = useState('');
+  const {
+    loading,
+    data: response,
+    error,
+  } = useFetch(`${process.env.REACT_APP_FAKER_API}/books`);
+
+  const [storage, setStorage] = useLocalStorage('app-books', []);
 
   useEffect(() => {
-    // console.log("ერთჯერადი");
-  }, []);
+    if (!loading) {
+      setStorage(response.data);
+    }
+  }, [loading, response, setStorage]);
 
-  useEffect(() => {
-    // console.log("ყოველთვის");
-  });
+  if (loading) {
+    return <Loader />;
+  }
+  if (error) {
+    return (
+      <div className="alert alert-danger">
+        <pre>{JSON.stringify(error)}</pre>
+      </div>
+    );
+  }
 
-  useEffect(() => {
-    // console.info("მნიშვნელობის შეცვლილსას");
-    setMessage(value);
-  }, [value]);
+  console.log(storage);
+  console.log(response.data);
 
   return (
     <div className="row">
-      <button
-        className="btn btn-primary"
-        onClick={() => setValue(Math.random().toString())}>
+      {/* <h2>Length - {data.length}</h2> */}
+      <button type="button" className="btn btn-primary">
         Change Value
       </button>
-      <button
-        className="btn btn-info mt-2"
-        onClick={() => setMessage(Math.random().toString())}>
-        Change Message
-      </button>
-      <h2>Home Page</h2>
-      <h4>Value - {value}</h4>
-      <h4>Message - {message}</h4>
     </div>
   );
 }

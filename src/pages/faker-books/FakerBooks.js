@@ -25,6 +25,7 @@ const bookReducer = (state, action) => {
         oldBooks: [...action.payload],
       };
     case SET_FILTER:
+      // eslint-disable-next-line no-case-declarations
       const filtered = state.books.filter((item) => {
         return item.title.toLowerCase().includes(action.payload.toLowerCase());
       });
@@ -55,7 +56,9 @@ function FakerBooks() {
   const [state, dispatch] = useReducer(bookReducer, initialState);
 
   const loadBooks = async () => {
-    const bookData = await getFakerBooks({ quantity: 12 });
+    const bookData = await getFakerBooks({
+      quantity: 12,
+    });
     dispatch({
       type: SET_BOOKS,
       payload: [...bookData],
@@ -72,12 +75,10 @@ function FakerBooks() {
         type: SET_FILTER,
         payload: target.value,
       });
-    } else {
-      if (state.filter) {
-        dispatch({
-          type: CLEAR_FILTER,
-        });
-      }
+    } else if (state.filter) {
+      dispatch({
+        type: CLEAR_FILTER,
+      });
     }
   });
 
@@ -101,7 +102,9 @@ function FakerBooks() {
             <div
               className="card p-1 mx-1 mb-2"
               key={item.isbn}
-              style={{ maxWidth: '18rem' }}>
+              style={{
+                maxWidth: '18rem',
+              }}>
               <h2 className="card-title text-center">{item.title}</h2>
               <img
                 src={item.image}

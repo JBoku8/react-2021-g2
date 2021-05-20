@@ -1,7 +1,7 @@
 export class API_SERVICE {
   static getTodoList({ start = 0, limit = 10, callback }) {
     fetch(
-      process.env.REACT_APP_API_URL + `/todos?_start=${start}&_limit=${limit}`,
+      `${process.env.REACT_APP_API_URL}/todos?_start=${start}&_limit=${limit}`,
     )
       .then((response) => response.json())
       .then((result) => {
@@ -15,8 +15,7 @@ export class API_SERVICE {
   static async getTodoListAsync({ start = 0, limit = 10 }) {
     try {
       const response = await fetch(
-        process.env.REACT_APP_API_URL +
-          `/todos?_start=${start}&_limit=${limit}`,
+        `${process.env.REACT_APP_API_URL}/todos?_start=${start}&_limit=${limit}`,
       );
 
       const result = await response.json();
@@ -24,13 +23,14 @@ export class API_SERVICE {
       return result;
     } catch (error) {
       console.trace(error);
+      return [];
     }
   }
 
   static async getTodoListItemAsync(todoId) {
     try {
       const response = await fetch(
-        process.env.REACT_APP_API_URL + `/todos/${todoId}`,
+        `${process.env.REACT_APP_API_URL}/todos/${todoId}`,
       );
 
       const result = await response.json();
@@ -38,6 +38,7 @@ export class API_SERVICE {
       return result;
     } catch (error) {
       console.trace(error);
+      return [];
     }
   }
 }

@@ -10,7 +10,9 @@ function TodoProviderComponent({ children }) {
   const [todoList, setTodoList] = useState([]);
 
   const loadTodoData = async () => {
-    const result = await API_SERVICE.getTodoListAsync({ limit: 5 });
+    const result = await API_SERVICE.getTodoListAsync({
+      limit: 5,
+    });
     if (result) {
       setTodoList(result);
     }
@@ -52,7 +54,8 @@ function TodoProviderComponent({ children }) {
         setTodoList,
         onAddTodo,
         onTodoUpdate,
-      }}>
+      }}
+    >
       {children}
     </TodoProvider.Provider>
   );

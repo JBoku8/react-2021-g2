@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 
-function SignUpForm(props) {
+function SignUpForm() {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
@@ -20,10 +20,12 @@ function SignUpForm(props) {
             type="email"
             className="form-control"
             id="email"
-            {...register('email', { required: true })}
+            {...register('email', {
+              required: true,
+            })}
           />
           <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
+            We&apos;ll never share your email with anyone else.
           </div>
         </div>
         <div className="mb-3">

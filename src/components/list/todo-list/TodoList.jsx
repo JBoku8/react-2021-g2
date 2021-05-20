@@ -3,7 +3,7 @@ import TodoListItem from './TodoListItem';
 import { TodoProvider } from '../../../providers/TodoProvider';
 import './todo-list.css';
 
-function TodoList(props) {
+function TodoList() {
   const { todoList } = useContext(TodoProvider);
 
   return (

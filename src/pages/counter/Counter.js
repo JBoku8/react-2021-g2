@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 class Counter extends React.Component {
   state = {
-    title: "Loading...",
+    title: 'Loading...',
     count: 0,
   };
 
@@ -10,9 +10,11 @@ class Counter extends React.Component {
     // throw new SyntaxError("Counter exception");
     // AJAX calls
     this.timerId = setTimeout(() => {
-      this.setState({
-        ...this.state,
-        title: "Counter Page",
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          title: 'Counter Page',
+        };
       });
     }, 2000);
     // document.body.style.backgroundColor = "#1B9CFC";
@@ -33,9 +35,11 @@ class Counter extends React.Component {
   };
 
   onReset = () => {
-    this.setState({
-      ...this.state,
-      count: 0,
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        count: 0,
+      };
     });
   };
 
@@ -53,16 +57,31 @@ class Counter extends React.Component {
     return (
       <div className="row">
         <h2 className="text-muted">
-          {title} - {count}
+          {title}
+          {' '}
+          -
+          {count}
         </h2>
         <div className="col-2 d-flex justify-content-between">
-          <button className="btn btn-info btn-lg" onClick={this.onPlus}>
+          <button
+            className="btn btn-info btn-lg"
+            onClick={this.onPlus}
+            type="button"
+          >
             +
           </button>
-          <button className="btn btn-warning btn-lg" onClick={this.onReset}>
+          <button
+            className="btn btn-warning btn-lg"
+            onClick={this.onReset}
+            type="button"
+          >
             0
           </button>
-          <button className="btn btn-danger btn-lg" onClick={this.onMinus}>
+          <button
+            className="btn btn-danger btn-lg"
+            onClick={this.onMinus}
+            type="button"
+          >
             -
           </button>
         </div>

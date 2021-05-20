@@ -1,7 +1,7 @@
-import { useState } from "react";
-import Greeting from "../greeting";
-import { Button } from "../ui";
-import Limitation from "./Limitation";
+import { useState } from 'react';
+import Greeting from '../greeting';
+import { Button } from '../ui';
+import Limitation from './Limitation';
 // import { firstName as username } from "../../utils/constants";
 
 const Welcome = ({ message }) => {
@@ -9,14 +9,14 @@ const Welcome = ({ message }) => {
   const [counter, setCounter] = useState(0);
 
   const styles = {
-    color: "seagreen",
-    textAlign: "center",
+    color: 'seagreen',
+    textAlign: 'center',
   };
   // newValue !== oldValue
   // newObject !== oldObject
-  const onClickHandler = (event) => {
-    console.log("ADADADAD");
-    setValue("state updated");
+  const onClickHandler = () => {
+    console.log('ADADADAD');
+    setValue('state updated');
   };
 
   const onAdd = () => {

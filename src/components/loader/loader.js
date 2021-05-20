@@ -5,3 +5,5 @@ export const Loader = ({ message }) => {
     </div>
   );
 };
+
+export default Loader;

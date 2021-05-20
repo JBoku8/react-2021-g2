@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 
 import { TodoProvider } from '../../../providers/TodoProvider';
 
-function AddTodoForm(props) {
+function AddTodoForm() {
   const { onAddTodo } = useContext(TodoProvider);
 
   const [title, setTitle] = useState('');
@@ -23,7 +23,9 @@ function AddTodoForm(props) {
     <form onSubmit={onSubmit}>
       <div className="mb-3">
         <label htmlFor="todoTitle" className="form-label">
-          Todo Title - {title}
+          Todo Title -
+          {' '}
+          {title}
         </label>
         <input
           type="text"

@@ -30,10 +30,12 @@ function SignInForm() {
             className="form-control"
             id="email"
             defaultValue="eve.holt@reqres.in"
-            {...register('email', { required: true })}
+            {...register('email', {
+              required: true,
+            })}
           />
           <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
+            We&apos;ll never share your email with anyone else.
           </div>
         </div>
         <div className="mb-3">

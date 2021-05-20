@@ -1,7 +1,8 @@
+import classNames from 'classnames';
 import { useContext, useEffect } from 'react';
 
 import { TodoProvider } from '../../../providers/TodoProvider';
-import API_SERVICE from '../../../services/api';
+import { API_SERVICE } from '../../../services/api';
 
 function TodoListItem({ todo }) {
   const { onTodoUpdate } = useContext(TodoProvider);
@@ -13,12 +14,14 @@ function TodoListItem({ todo }) {
     })();
   }, [todo]);
 
+  /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
   return (
     <div
-      className={`list-group-item list-group-item-action ${
-        todo.completed ? 'list-group-item-primary' : ''
-      }`}
-      onClick={() => onTodoUpdate(todo)}>
+      className={classNames('list-group-item list-group-item-action', {
+        'list-group-item-primary': todo.completed,
+      })}
+      onClick={() => onTodoUpdate(todo)}
+      onKeyPress={() => {}}>
       {todo.title}
     </div>
   );

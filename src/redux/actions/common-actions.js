@@ -1,8 +1,6 @@
-import {
-  ADD_NUMBER,
+import { ADD_NUMBER,
   SUBTRACT_NUMBER,
-  RESET_NUMBER,
-} from '../action-types/common-types';
+  RESET_NUMBER } from '../action-types/common-types';
 
 export const addNumberAction = (payload) => ({
   type: ADD_NUMBER,
