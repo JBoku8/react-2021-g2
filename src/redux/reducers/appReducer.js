@@ -5,6 +5,8 @@ const initialState = {
   message: 'ReactJS Rocks',
   error: null,
   auth: null,
+  loading: false,
+  companies: null,
 };
 
 export const appReducer = (state = initialState, action) => {
@@ -39,6 +41,27 @@ export const appReducer = (state = initialState, action) => {
       return {
         ...state,
         auth: action.payload,
+      };
+
+    // companies
+    case types.GET_COMPANIES_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case types.GET_COMPANIES_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+        companies: null,
+      };
+    case types.GET_COMPANIES_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        companies: action.payload,
       };
 
     default:

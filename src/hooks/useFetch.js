@@ -23,9 +23,7 @@ const useFetch = (url = '', options = null) => {
           setData(null);
         }
       })
-      .finally(() => {
-        setLoading(false);
-      });
+      .finally(() => mounted && setLoading(false));
     return () => {
       mounted = false;
     };

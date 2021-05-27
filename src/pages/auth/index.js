@@ -5,6 +5,8 @@ import SignInPage from './sign-in';
 import SignUpPage from './sign-up';
 import { withNoAuth } from '../../hoc';
 
+import { SIGN_IN_PATH, SIGN_UP_PATH } from '../../utils/routePaths';
+
 function AuthPage() {
   const location = useLocation();
   return (
@@ -14,20 +16,18 @@ function AuthPage() {
           <li className="nav-item">
             <Link
               className={classNames('nav-link', {
-                active: location.pathname.includes('/sign-in'),
+                active: location.pathname.includes(SIGN_IN_PATH),
               })}
-              to="/auth/sign-in"
-            >
+              to={SIGN_IN_PATH}>
               Sign In
             </Link>
           </li>
           <li className="nav-item">
             <Link
               className={classNames('nav-link', {
-                active: location.pathname.includes('/sign-up'),
+                active: location.pathname.includes(SIGN_UP_PATH),
               })}
-              to="/auth/sign-up"
-            >
+              to={SIGN_UP_PATH}>
               Sign Up
             </Link>
           </li>
@@ -35,13 +35,13 @@ function AuthPage() {
       </div>
       <div className="row">
         <Switch>
-          <Route path="/auth/sign-in">
+          <Route path={SIGN_IN_PATH}>
             <SignInPage />
           </Route>
-          <Route path="/auth/sign-up">
+          <Route path={SIGN_UP_PATH}>
             <SignUpPage />
           </Route>
-          <Redirect to="/auth/sign-in" />
+          <Redirect to={SIGN_IN_PATH} />
         </Switch>
       </div>
     </div>

@@ -90,6 +90,7 @@
           "onKeyUp"
         ]
       }
-    ]
+    ],
+    "object-curly-newline": ["off"]
   }
 }
