@@ -1,9 +1,19 @@
+/* eslint-disable object-curly-newline */
 import { createStore, applyMiddleware } from 'redux';
-// import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 import { appReducer } from './reducers';
-import { loggerMiddleware, validationMiddleware } from './middleware';
+import {
+  loggerMiddleware,
+  validationMiddleware,
+  autoLoginMiddleware,
+} from './middleware';
 
-const middleware = [loggerMiddleware, validationMiddleware];
+const middleware = [
+  loggerMiddleware,
+  validationMiddleware,
+  autoLoginMiddleware,
+  thunk,
+];
 
 const rootStore = createStore(appReducer, applyMiddleware(...middleware));
 

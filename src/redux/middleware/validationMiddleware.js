@@ -1,16 +1,13 @@
-export const validationMiddleware = (store) => {
+import { BLOCKED_ACTION } from '../action-types/middleware-types';
+
+export const validationMiddleware = () => {
   return (next) => {
     return (action) => {
-      console.group('[validationMiddleware]');
-      if (action.type !== 'BLOCKED_ACTION') {
-        console.log('OLD STATE', store.getState());
-        console.log('ACTION', action);
+      if (action.type !== BLOCKED_ACTION) {
         next(action);
-        console.log('NEW STATE', store.getState());
       } else {
         console.error('invalid action dispatched');
       }
-      console.groupEnd();
     };
   };
 };
