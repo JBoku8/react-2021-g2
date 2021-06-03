@@ -1,6 +1,2 @@
-export const authSelector = (state) => state.auth;
-
-const exporting = {
-  authSelector,
-};
-export default exporting;
+export const authSelector = ({ user: { auth } }) => auth;
+export const authErrorSelector = ({ user: { error } }) => error;

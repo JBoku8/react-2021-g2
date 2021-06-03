@@ -1,7 +1,6 @@
-/* eslint-disable object-curly-newline */
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { appReducer } from './reducers';
+import rootReducer from './reducers';
 import {
   loggerMiddleware,
   validationMiddleware,
@@ -15,6 +14,6 @@ const middleware = [
   thunk,
 ];
 
-const rootStore = createStore(appReducer, applyMiddleware(...middleware));
+const rootStore = createStore(rootReducer, applyMiddleware(...middleware));
 
 export default rootStore;

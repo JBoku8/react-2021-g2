@@ -14,7 +14,6 @@ function TodoListItem({ todo }) {
     })();
   }, [todo]);
 
-  /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
   return (
     <div
       className={classNames('list-group-item list-group-item-action', {

@@ -1,4 +1,13 @@
-export { appReducer } from './appReducer';
+import { combineReducers } from 'redux';
 
-export default {
-};
+import { counterReducer } from './counterReducer';
+import { authReducer } from './authReducer';
+import { companyReducer } from './companyReducer';
+
+const rootReducer = combineReducers({
+  counter: counterReducer,
+  user: authReducer,
+  companies: companyReducer,
+});
+
+export default rootReducer;
