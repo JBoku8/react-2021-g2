@@ -2,5 +2,6 @@
   "editor.formatOnSave": true,
   "window.zoomLevel": 1,
   "editor.fontSize": 11,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "jest.jestCommandLine": "jest-start"
 }

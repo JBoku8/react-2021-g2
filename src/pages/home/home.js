@@ -4,8 +4,8 @@ import { Loader } from '../../components/loader';
 import useBackgroundColor from '../../hooks/useBackgroundColor';
 import useFetch from '../../hooks/useFetch';
 import useLocalStorage from '../../hooks/useLocalStorage';
-import { getCompaniesAsync } from '../../redux/actions/common-actions';
-import { companiesSelector } from '../../redux/selectors/common-selectors';
+import { getCompaniesAsync } from '../../redux/actions/company-actions';
+import { companiesSelector } from '../../redux/selectors/company-selectors';
 
 function HomePage() {
   const dispatch = useDispatch();
