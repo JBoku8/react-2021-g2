@@ -6,6 +6,7 @@ function Button({
   buttonType = 'button',
   onClick,
   className = '',
+  ...props
 }) {
   if (type === 'none') {
     return null;
@@ -15,7 +16,8 @@ function Button({
     <button
       className={['btn', 'mx-1', type, className].join(' ')}
       onClick={onClick}
-      type={buttonType}>
+      type={buttonType}
+      {...props}>
       {text}
     </button>
   );

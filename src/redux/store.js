@@ -1,18 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 import rootReducer from './reducers';
-import {
-  loggerMiddleware,
-  validationMiddleware,
-  autoLoginMiddleware,
-} from './middleware';
+import { validationMiddleware, autoLoginMiddleware } from './middleware';
 
-const middleware = [
-  loggerMiddleware,
-  validationMiddleware,
-  autoLoginMiddleware,
-  thunk,
-];
+const middleware = [validationMiddleware, autoLoginMiddleware, thunk, logger];
 
 const rootStore = createStore(rootReducer, applyMiddleware(...middleware));
 
