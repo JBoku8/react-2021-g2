@@ -10,7 +10,7 @@ export const getFakerBooks = async ({ quantity = 3 }) => {
     return response.data.data;
   } catch (error) {
     console.trace(error);
-    return [];
+    return error;
   }
 };
 
@@ -20,6 +20,6 @@ export const getFakerCompanies = async (quantity) => {
     return response.data.data;
   } catch (error) {
     console.trace(error);
-    return [];
+    return error;
   }
 };

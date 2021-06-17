@@ -15,3 +15,10 @@ describe('Loader component test', () => {
     expect(loaderMessageElement).toBeInTheDocument();
   });
 });
+
+describe('Loader snapshots', () => {
+  test('loader renders successfully', () => {
+    const component = render(<Loader />);
+    expect(component).toMatchSnapshot();
+  });
+});
