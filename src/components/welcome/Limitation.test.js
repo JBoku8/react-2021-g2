@@ -19,3 +19,11 @@ describe('Limitation component test', () => {
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 });
+
+describe('Limitation snapshots', () => {
+  test('renders successfully', () => {
+    const onClick = jest.fn();
+    const component = render(<Limitation onClick={onClick} />);
+    expect(component).toMatchSnapshot();
+  });
+});

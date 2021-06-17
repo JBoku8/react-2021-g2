@@ -31,3 +31,10 @@ describe('Welcome component testing', () => {
     expect(greeting).toHaveTextContent(mockProps.startValue + 1);
   });
 });
+
+describe('Welcome snapshots', () => {
+  test('renders successfully', () => {
+    const component = render(<Welcome {...mockProps} />);
+    expect(component).toMatchSnapshot();
+  });
+});
